@@ -73,41 +73,6 @@ if df is not None:
     fig2 = m.plot_components(forecast)
     st.write(fig2)
 
-"""
-### Step 4: Analyze Forecast Performance (Optional)
-
-Advanced users can view the Mean Average Percentage Error (MAPE), Mean Average Error (MAE), and Median Absolute Percentage Error (MdAPE) for your selected periods and horizon below.
-
-If you'd like to learn more about the initial period, periods, and horizon inputs, read more here: https://facebook.github.io/prophet/docs/diagnostics.html
-"""
-
-initial_period = st.text_input(label = 'Initial Period (i.e. 365 days) The initial period should be long enough to capture all of the components of the model, in particular seasonalities and extra regressors: at least a year for yearly seasonality, at least a week for weekly seasonality, etc.', value='', max_chars=10, key=None, type='default')
-period_input = st.text_input(label = 'Period (i.e. 5 days) This input is for the spacing between cutoff dates', value='', max_chars=10, key=None, type='default')
-
-if st.button('Run Forecast Metrics'):
-    with st.spinner('Crunching forecast metrics... this may take a few minutes. In the meantime you can still save the forecast from the below link...'):             
-        df_cv = cross_validation(m, initial= initial_period, period = period_input, horizon = periods_input)
-        st.write(df_cv.head())
-        
-        df_p = performance_metrics(df_cv)
-        
-        selected_df_p = df_p[['horizon','mae', 'mape', 'mdape']]
-        st.write(selected_df_p)
-
-        #fig_csv = plot_cross_validation_metric(df_cv, metric='mape')
-        #st.write(fig_csv)
-
-    st.success('Done!')
-else:
-    st.write('')
-
-
-"""
-### Step 5: Download the Forecast Data
-
-The below link allows you to download the newly created forecast to your computer for further analysis and use.
-"""
-
 if df is not None:
     csv_exp = fcst_filtered.to_csv(index=False)
     # When no file name is given, pandas returns the CSV as a string, nice.
