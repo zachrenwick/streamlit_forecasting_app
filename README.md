@@ -1,5 +1,4 @@
 # 📈 Automated Time Series Forecasting
-This data app uses Facebook's open-source Prophet library to automatically generate future forecast values from an imported dataset. 
 
 **Background:** This MVP data web app uses the Streamlit framework and Facebook's Prophet forecasting package to generate a dynamic forecast from your own data. 
 
