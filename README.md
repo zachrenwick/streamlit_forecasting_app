@@ -16,3 +16,11 @@ Code available here: https://github.com/zachrenwick/streamlit_forecasting_app
 ![Screenshot2](/images/screenshot2.jpg)
 ![Screenshot3](/images/screenshot3.jpg)
 ![Screenshot4](/images/screenshot4.jpg)
+
+## Docker
+* Build with `docker build -t ts-forecast-app .` (takes some time!)
+* Run with `docker run -p 8501:8501 ts-forecast-app:latest`
+* Open [http://localhost:8501/](http://localhost:8501/)
+
+## Example data
+The Peyton Manning data [from the prophet quickstart](https://facebook.github.io/prophet/docs/quick_start.html#python-api) is included in the `example_data` folder
