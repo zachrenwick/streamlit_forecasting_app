@@ -2,5 +2,5 @@ pystan==2.19.1.1
 prophet==1.0
 numpy==1.22.4
 protobuf~=3.19.0
-streamlit==1.11.1
+streamlit==1.30.0
 pandas==1.4.2
